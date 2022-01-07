@@ -82,3 +82,34 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
     $ detectnet --model=models/Mask/ssd-mobilenet.onnx --labels=models/Mask/labels.txt \
               --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
                 /dev/video0
+## 5. Construye tu propio código para detección de objetos en JetsonNano
+
+En este punto debes tener el archivo labels.txt y el modelo con extensión .onnx
+
+### Montar el docker con nuestro modelo ya entrenado
+    *   Creamos una carpeta en el directorio raiz (fuera del docker)
+    *   Copiamos en la carpeta los archivos labels.txt, ssd-mobilenet.onnx y nuestro programa my_detection.py (por ahora este archivo vacío)
+    *   Si es necesario dar permisos a la carpeta usando chmod
+    *   Montamos el docker agregando esta carpeta
+    
+    $ sudo mkdir my_project
+    $ sudo chmod -R a+rwx my_project
+    $ cd jetson-inference
+    $ docker/run.sh --volume ~/my_project:/my_project
+
+## Construimos nuestro código (my_detection.py)
+
+    import jetson.inference
+    import jetson.utils
+
+    net = jetson.inference.detectNet("ssd-mobilenet-v2",["--model=/my_project/ssd-mobilenet.onnx","--labels=/my_project/labels.txt","--input-blob=input_0","--output-cvg=scores","--output-bbox=boxes"])
+    camera = jetson.utils.videoSource("/dev/video0")
+    display = jetson.utils.videoOutput("display://0")
+
+    while display.IsStreaming():
+        img = camera.Capture()
+        detections = net.Detect(img)
+        display.Render(img)
+        display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
+    
+    
