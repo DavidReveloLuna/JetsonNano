@@ -97,7 +97,7 @@ En este punto debes tener el archivo labels.txt y el modelo con extensión .onnx
     $ cd jetson-inference
     $ docker/run.sh --volume ~/my_project:/my_project
 
-## Construimos nuestro código (my_detection.py)
+### Construimos nuestro código (my_detection.py)
 
     import jetson.inference
     import jetson.utils
@@ -112,7 +112,7 @@ En este punto debes tener el archivo labels.txt y el modelo con extensión .onnx
         display.Render(img)
         display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
 
-## Prueba de nuestro código
+### Prueba de nuestro código
 
     $ python3 /my_project/my_detection.py
     
