@@ -60,3 +60,7 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
     $ detectnet --model=models/fruit/ssd-mobilenet.onnx --labels=models/fruit/labels.txt \
               --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
                 /dev/video0
+
+## 4. Entrenamiento para detección de mascarillas + etiquetado de dataset 
+
+[Tutorial #4 - click aqui](https://www.youtube.com/watch?v=HC8bq3fFoTk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=5)
