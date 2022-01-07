@@ -24,7 +24,7 @@ Para ejecutar los demos en la carpeta bin:
     
 ## 3. Entrenamiento de SSD-Mobilenet
 
-[Tutorial # - click aqui](https://www.youtube.com/watch?v=HXFVexBPjMk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=3)
+[Tutorial #3 - click aqui](https://www.youtube.com/watch?v=HXFVexBPjMk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=3)
 
 ### Configuración de memoria swap
 
