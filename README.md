@@ -43,7 +43,7 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
     
 ### Entrenamiento de la red
 
-    $ python3 open_images_downloader.py --max-images=2500 --class-names "Apple,Orange,Banana,Strawberry,Grape,Pear,Pineapple,Watermelon" --data=data/fruit
+    $ python3 train_ssd.py --data=data/fruit --model-dir=models/fruit --batch-size=4 --epochs=30
 
 ### Convertir modelo a formato ONNX para TensorRT
 
@@ -64,3 +64,21 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
 ## 4. Entrenamiento para detección de mascarillas + etiquetado de dataset 
 
 [Tutorial #4 - click aqui](https://www.youtube.com/watch?v=HC8bq3fFoTk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=5)
+
+### Etiquetado de dataset
+
+    $ camera-capture /dev/video0
+
+### Entrenamiento de la red
+
+    $ python3 train_ssd.py --dataset-type=voc --data=data/Mask/ --model-dir=models/Mask --batch-size=2 --epochs=10
+    
+### Convertir modelo a formato ONNX para TensorRT
+
+    $ python3 onnx_export.py --model-dir=models/Mask/
+
+### Prueba del modelo en tiempo real con webcam
+
+    $ detectnet --model=models/Mask/ssd-mobilenet.onnx --labels=models/Mask/labels.txt \
+              --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
+                /dev/video0
