@@ -116,3 +116,8 @@ En este punto debes tener el archivo labels.txt y el modelo con extensión .onnx
 
     $ python3 /my_project/my_detection.py
     
+## 6. Entrenamiento de modelo SSD en google Colab para Jetson Nano
+
+Usaremos labelImg para etiquetar el dataset, la carpeta TrainingTools.zip y google Colab para entrenar el SSD en el siguiente documento de colab.
+
+[Entrenamiento en Colab](https://colab.research.google.com/drive/1PrzHKE0yKtyGWIlWIC5OAZv4ywMGDDTZ?usp=sharing)
