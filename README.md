@@ -2,12 +2,12 @@
 
 ## 1. Instalación Jetpack. Configuración inicial
 
-[Tutorial Youtube#1 - click aqui](https://www.youtube.com/watch?v=6uqM6ltCLlE&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG)
+[Tutorial Youtube - click aqui](https://www.youtube.com/watch?v=6uqM6ltCLlE&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG)
 
 
 ## 2. Detección de objetos Hello World desde Docker
 
-[Tutorial Youtube#2 - click aqui](https://www.youtube.com/watch?v=6uqM6ltCLlE&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG)
+[Tutorial Youtube - click aqui](https://www.youtube.com/watch?v=6uqM6ltCLlE&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG)
 
     $ git clone --recursive https://github.com/dusty-nv/jetson-in...
     $ cd jetson-inference
@@ -24,7 +24,7 @@ Para ejecutar los demos en la carpeta bin:
     
 ## 3. Entrenamiento de SSD-Mobilenet
 
-[Tutorial Youtube#3 - click aqui](https://www.youtube.com/watch?v=HXFVexBPjMk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=3)
+[Tutorial Youtube - click aqui](https://www.youtube.com/watch?v=HXFVexBPjMk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=3)
 
 ### Configuración de memoria swap
 
@@ -63,7 +63,7 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
 
 ## 4. Entrenamiento para detección de mascarillas + etiquetado de dataset 
 
-[Tutorial Youtube#4 - click aqui](https://www.youtube.com/watch?v=HC8bq3fFoTk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=5)
+[Tutorial Youtube - click aqui](https://www.youtube.com/watch?v=HC8bq3fFoTk&list=PLsjK_a5MFguIUJJ1GPt1I2eN6cihKg2kG&index=5)
 
 ### Etiquetado de dataset
 
@@ -83,6 +83,8 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
               --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
                 /dev/video0
 ## 5. Construye tu propio código para detección de objetos en JetsonNano
+
+[Tutorial Youtube - click aqui](https://colab.research.google.com/drive/1PrzHKE0yKtyGWIlWIC5OAZv4ywMGDDTZ?usp=sharing)
 
 En este punto debes tener el archivo labels.txt y el modelo con extensión .onnx
 
