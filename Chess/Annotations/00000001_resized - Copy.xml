@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>00000001_resized - Copy.jpg</filename>
+	<path>D:\Desarrollos\JetsonNano\labelImg\Chess\JPEGImages\00000001_resized - Copy.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>224</width>
+		<height>224</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pawn</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>27</xmin>
+			<ymin>15</ymin>
+			<xmax>190</xmax>
+			<ymax>208</ymax>
+		</bndbox>
+	</object>
+</annotation>
