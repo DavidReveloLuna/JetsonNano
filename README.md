@@ -120,3 +120,10 @@ En este punto debes tener el archivo labels.txt y el modelo con extensión .onnx
 Usaremos labelImg para etiquetar el dataset, la carpeta TrainingTools.zip y google Colab para entrenar el SSD en el siguiente documento de colab.
 
 [Entrenamiento en Colab](https://colab.research.google.com/drive/1PrzHKE0yKtyGWIlWIC5OAZv4ywMGDDTZ?usp=sharing)
+
+Algunas instrucciones que usamos en consola
+
+    $   docker/run.sh --volume ~/my_project:/my_project
+    $   python3 onnx_export.py --model-dir=models/Chess 
+    $   detectnet --model=models/Chess/ssd-mobilenet.onnx --labels=models/Chess/labels.txt --input-blob=input_0 --output-cvg=scores --output-bbox=boxes /dev/video0
+    $   python3 /my_project/Chess.py
