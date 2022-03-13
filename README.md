@@ -51,15 +51,11 @@ Agregar la siguiente linea al final del archivo /etc/fstab para que los cambios 
 
 ### Prueba del modelo en imagenes
 
-    $ detectnet --model=models/fruit/ssd-mobilenet.onnx --labels=models/fruit/labels.txt \
-              --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
-                "/jetson-inference/python/training/detection/ssd/data/fruit/test/*.jpg" /jetson-inference/data/images/test/fruit_%i.jpg
+    $ detectnet --model=models/fruit/ssd-mobilenet.onnx --labels=models/fruit/labels.txt --input-blob=input_0 --output-cvg=scores --output-bbox=boxes "/jetson-inference/python/training/detection/ssd/data/fruit/test/*.jpg" /jetson-inference/data/images/test/fruit_%i.jpg
 
 ### Prueba del modelo en tiempo real con webcam
 
-    $ detectnet --model=models/fruit/ssd-mobilenet.onnx --labels=models/fruit/labels.txt \
-              --input-blob=input_0 --output-cvg=scores --output-bbox=boxes \
-                /dev/video0
+    $ detectnet --model=models/fruit/ssd-mobilenet.onnx --labels=models/fruit/labels.txt --input-blob=input_0 --output-cvg=scores --output-bbox=boxes /dev/video0
 
 ## 4. Entrenamiento para detección de mascarillas + etiquetado de dataset 
 
