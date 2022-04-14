@@ -129,3 +129,13 @@ Algunas instrucciones que usamos en consola
     $   python3 onnx_export.py --model-dir=models/Chess 
     $   detectnet --model=models/Chess/ssd-mobilenet.onnx --labels=models/Chess/labels.txt --input-blob=input_0 --output-cvg=scores --output-bbox=boxes /dev/video0
     $   python3 /my_project/Chess.py
+
+## 7. Inferencia de modelo SSD en video (.mp4) / Modificación de threshold usando argparse
+
+Modificamos la captura de video para leer un archivo .mp4 y no la cámara web
+
+    $  camera = cv2.VideoCapture("/my_project/video1.mp4")
+
+Usamos argparse para modificar por parámetro el threshold de detection
+
+    $   python3 /my_project/Chess.py --threshold 0.7
